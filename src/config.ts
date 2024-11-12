@@ -6,7 +6,7 @@ export const SITE: Site = {
   profile: "https://truong-bui.github.io/",
   desc: "RAID is a fast-paced, high-competitive, tactical third-person shooter created in Fortnite.",
   title: "UEFN RAID",
-  ogImage: "astropaper-og.jpg",
+  ogImage: "RaidMarketThumbnail.png",
   lightAndDarkMode: false,
   postPerIndex: 4,
   postPerPage: 3,
@@ -40,21 +40,21 @@ export const SOCIALS: SocialObjects = [
   },
   {
     name: "Facebook",
-    href: "https://github.com/satnaing/astro-paper",
-    linkTitle: `${SITE.title} on Facebook`,
+    href: "https://www.facebook.com/uefnraid",
+    linkTitle: `Follow ${SITE.title} on Facebook`,
     active: true,
   },
   {
     name: "Instagram",
-    href: "https://github.com/satnaing/astro-paper",
-    linkTitle: `${SITE.title} on Instagram`,
+    href: "https://www.instagram.com/uefnraid/",
+    linkTitle: `Follow ${SITE.title} on Instagram`,
     active: true,
   },
   {
     name: "LinkedIn",
     href: "https://github.com/satnaing/astro-paper",
     linkTitle: `${SITE.title} on LinkedIn`,
-    active: true,
+    active: false,
   },
   {
     name: "Mail",
@@ -64,9 +64,9 @@ export const SOCIALS: SocialObjects = [
   },
   {
     name: "X",
-    href: "https://github.com/satnaing/astro-paper",
-    linkTitle: `${SITE.title} on X`,
-    active: false,
+    href: "https://x.com/uefnraid",
+    linkTitle: `Follow ${SITE.title} on X`,
+    active: true,
   },
   {
     name: "Twitch",
@@ -76,9 +76,9 @@ export const SOCIALS: SocialObjects = [
   },
   {
     name: "YouTube",
-    href: "https://github.com/satnaing/astro-paper",
-    linkTitle: `${SITE.title} on YouTube`,
-    active: false,
+    href: "https://www.youtube.com/@uefnraid",
+    linkTitle: `Follow ${SITE.title} on YouTube`,
+    active: true,
   },
   {
     name: "WhatsApp",
@@ -100,9 +100,9 @@ export const SOCIALS: SocialObjects = [
   },
   {
     name: "TikTok",
-    href: "https://github.com/satnaing/astro-paper",
-    linkTitle: `${SITE.title} on TikTok`,
-    active: false,
+    href: "https://www.tiktok.com/@uefnraid",
+    linkTitle: `Follow ${SITE.title} on TikTok`,
+    active: true,
   },
   {
     name: "CodePen",
@@ -112,9 +112,9 @@ export const SOCIALS: SocialObjects = [
   },
   {
     name: "Discord",
-    href: "https://github.com/satnaing/astro-paper",
-    linkTitle: `${SITE.title} on Discord`,
-    active: false,
+    href: "https://discord.gg/F7YtVbXTHp",
+    linkTitle: `join ${SITE.title} on Discord`,
+    active: true,
   },
   {
     name: "GitLab",
@@ -124,9 +124,9 @@ export const SOCIALS: SocialObjects = [
   },
   {
     name: "Reddit",
-    href: "https://github.com/satnaing/astro-paper",
-    linkTitle: `${SITE.title} on Reddit`,
-    active: false,
+    href: "https://www.reddit.com/r/uefnraid/",
+    linkTitle: `Join ${SITE.title} on Reddit`,
+    active: true,
   },
   {
     name: "Skype",

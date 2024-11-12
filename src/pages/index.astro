@@ -17,13 +17,18 @@ const featuredPosts = sortedPosts.filter(({ data }) => data.featured);
 const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
 
 const socialCount = SOCIALS.filter(social => social.active).length;
+
+const RAIDMaps = [ 
+  {mapName : "RAID - MARKET", mapCode : "8615-7337-4501"},  
+  
+  ];
 ---
 
 <Layout>
   <Header />
   <main id="main-content">
     <section id="hero">
-      <h1>Introduce</h1>
+      <h1>About</h1>
       <a
         target="_blank"
         href="/rss.xml"
@@ -41,29 +46,51 @@ const socialCount = SOCIALS.filter(social => social.active).length;
         <span class="sr-only">RSS Feed</span>
       </a>
 
+      <img src="/src/assets/images/thumbnails/market/RaidMarketThumbnail.png" alt="RaidMarketThumbnail">
+      <br />
+
       <p>
-        RAID is a fast-paced, high-competitive, tactical third-person shooter
-        created in Fortnite. Two opposing teams, the "Defender" and the
-        "Raider," compete against each other. The Raider's objective is to plant
-        a bomb, while the Defender aims to stop them. Players acquire weapons
-        through a weapon shop UI that appears at the start of the game. There
-        are 51 selected weapons and items in RAID. RAID features Kill
-        Achievements and Ranking Systems.
+        RAID is a fast-paced, high-competitive, tactical third-person shooter created in Fortnite. 
+        <br />
+        <br />
+        Two opposing teams, the "Defender" and the "Raider," compete against each other. The Raider's objective is to plant a bomb, while the Defender aims to stop them. Players acquire weapons through a weapon shop UI that appears at the start of the game.
+        <br />
+        <br />
+        There are 51 selected weapons and items in RAID. RAID features Kill Achievements and Ranking Systems.
       </p>
+      <br />
       <p>
-        Read the blog posts or check
+        Visit  
         <LinkButton
           className="underline decoration-dashed underline-offset-4 hover:text-skin-accent"
-          href="https://github.com/satnaing/astro-paper#readme"
+          href="/learn"
         >
-          README
-        </LinkButton> for more info.
+          Learn
+        </LinkButton> tab to learn more about RAID game-play mechanics
+      </p>
+      <p>
+        Visit  
+        <LinkButton
+          className="underline decoration-dashed underline-offset-4 hover:text-skin-accent"
+          href="/maps"
+        >
+          Maps
+        </LinkButton> tab to see all available maps in RAID
+      </p>
+      <p>
+        Visit  
+        <LinkButton
+          className="underline decoration-dashed underline-offset-4 hover:text-skin-accent"
+          href="/weapons"
+        >
+          Weapons
+        </LinkButton> tab to check all available weapons in RAID
       </p>
       {
         // only display if at least one social link is enabled
         socialCount > 0 && (
           <div class="social-wrapper">
-            <div class="social-links">Social Links:</div>
+            <div class="social-links">Follow RAID on Socials:</div>
             <Socials />
           </div>
         )
@@ -71,7 +98,14 @@ const socialCount = SOCIALS.filter(social => social.active).length;
     </section>
 
     <Hr />
-
+    <section id="featured">
+      <h2>RAID Island Codes</h2>
+      <br />
+      <ul>
+        {RAIDMaps.map((map) => <li>{map.mapName} : {map.mapCode}</li>)}
+      </ul>
+    </section>
+    
     {
       featuredPosts.length > 0 && (
         <>
