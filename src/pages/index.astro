@@ -9,6 +9,7 @@ import Card from "@components/Card";
 import Socials from "@components/Socials.astro";
 import getSortedPosts from "@utils/getSortedPosts";
 import { SITE, SOCIALS } from "@config";
+import { Image } from 'astro:assets';
 
 const posts = await getCollection("blog");
 
@@ -46,7 +47,7 @@ const RAIDMaps = [
         <span class="sr-only">RSS Feed</span>
       </a>
 
-      <img src="/src/assets/images/thumbnails/market/RaidMarketThumbnail.png" alt="RaidMarketThumbnail">
+      <Image src="/src/assets/images/thumbnails/market/RaidMarketThumbnail.png" alt="RaidMarketThumbnail" width="1920" height="1080" />
       <br />
 
       <p>
