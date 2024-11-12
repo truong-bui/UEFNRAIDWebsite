@@ -1,6 +1,6 @@
 ---
 layout: ../layouts/LearnLayout.astro
-title: "Learn"
+title: "Weapons"
 ---
 
 ## The page is in construction. Please stay in touch!
