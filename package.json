@@ -5,7 +5,7 @@
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro check && astro build",
-    "preview": "wrangler pages dev ./dis",
+    "preview": "astro preview",
     "sync": "astro sync",
     "astro": "astro",
     "format:check": "prettier --check . --plugin=prettier-plugin-astro",

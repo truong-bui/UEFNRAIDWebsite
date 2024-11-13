@@ -1,9 +1,9 @@
 ---
-layout: ../layouts/LearnLayout.astro
+layout: ../layouts/MapsLayout.astro
 title: "Maps"
 ---
 
-## The page is in construction. Please stay in touch!
+## This page is in construction. Please stay in touch!
 
 <!-- AstroPaper is a minimal, responsive and SEO-friendly Astro blog theme. I designed and crafted this based on [my personal blog](https://satnaing.dev/blog).
 
