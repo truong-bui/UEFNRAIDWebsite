@@ -1,7 +1,7 @@
 import type { Site, SocialObjects } from "./types";
 
 export const SITE: Site = {
-  website: "https://uefnraid.com", // replace this with your deployed domain
+  website: "https://uefnraid.com/", // replace this with your deployed domain
   author: "Truong Bui",
   profile: "https://truong-bui.github.io/",
   desc: "RAID is a fast-paced, high-competitive, tactical third-person shooter created in Fortnite.",
