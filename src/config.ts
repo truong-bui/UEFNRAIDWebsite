@@ -7,7 +7,7 @@ export const SITE: Site = {
   desc: "RAID is a fast-paced, high-competitive, tactical third-person shooter created in Fortnite.",
   title: "UEFN RAID",
   ogImage: "RaidMarketThumbnail.png",
-  lightAndDarkMode: false,
+  lightAndDarkMode: true,
   postPerIndex: 4,
   postPerPage: 3,
   scheduledPostMargin: 15 * 60 * 1000, // 15 minutes
