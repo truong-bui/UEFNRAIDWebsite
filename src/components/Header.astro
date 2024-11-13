@@ -2,7 +2,6 @@
 import { LOGO_IMAGE, SITE } from "@config";
 import Hr from "./Hr.astro";
 import LinkButton from "./LinkButton.astro";
-import '../utils/copy-button/styles.css';
 
 export interface Props {
   activeNav?:
@@ -19,20 +18,18 @@ export interface Props {
 const { activeNav } = Astro.props;
 ---
 
-<header>
+<header>  
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-C21WP1PH69"
   ></script>
   <script is:inline>
     window.dataLayer = window.dataLayer || [];
-    function gtag() {dataLayer.push(arguments);}
+    function gtag() {
+      dataLayer.push(arguments);
+    }
     gtag("js", new Date());
 
     gtag("config", "G-C21WP1PH69");
-  </script>
-  <script>
-    import '../utils/copy-button/copy-code-button.js';
-    import '../utils/copy-button/create-copy-button.js';    
   </script>
   <a id="skip-to-content" href="#main-content">Skip to content</a>
   <div class="nav-container">

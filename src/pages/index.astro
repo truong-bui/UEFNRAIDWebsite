@@ -12,7 +12,7 @@ import getSortedPosts from "@utils/getSortedPosts";
 import { SITE, SOCIALS } from "@config";
 import { Image } from 'astro:assets';
 import RaidMarketThumbnail from "@assets/images/thumbnails/market/RaidMarketThumbnail.png";
-
+import MagicButtons from "../components/MagicButtons.astro";
 const posts = await getCollection("blog");
 
 const sortedPosts = getSortedPosts(posts);
@@ -105,8 +105,8 @@ const RAIDMaps = [
       <ul>
         {RAIDMaps.map((map) => <li><h1>{map.mapName}</h1><Code code={map.mapCode} lang="js" /></li>)}
       </ul>
-    </section>
-    
+      
+    </section>   
     {
       featuredPosts.length > 0 && (
         <>
@@ -158,8 +158,8 @@ const RAIDMaps = [
         </svg>
       </LinkButton>
     </div>
+    <MagicButtons />
   </main>
-
   <Footer />
 </Layout>
 

@@ -96,6 +96,10 @@
   /* ===== Code Blocks & Syntax Highlighting ===== */
   pre:has(code) {
     @apply border border-skin-line;
+    overflow: auto;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    position: relative;
   }
   code,
   blockquote {
@@ -104,6 +108,10 @@
 
   pre > code {
     white-space: pre;
+    overflow: auto;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    position: relative;
   }
 
   /* Apply Dark Theme (if multi-theme specified) */
@@ -125,3 +133,4 @@
     @apply outline-2 outline-offset-1 outline-skin-fill focus-visible:no-underline focus-visible:outline-dashed;
   }
 }
+
