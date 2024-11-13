@@ -71,7 +71,7 @@ const RAIDMaps = [
           href="/maps"
         >
           Maps
-        </LinkButton> to see all available maps in RAID
+        </LinkButton> to see more details about RAID maps
       </p>
       <p>
         Visit  
@@ -96,16 +96,14 @@ const RAIDMaps = [
     </section>
 
     <Hr />
-    <section id="featured">
-      <h2>RAID Island Codes</h2>
-      <br/>
+    <section id="hero">
+      <h1>RAID Island Codes</h1>
       <p>To look for a RAID map in Fortnite, follow these steps:</p>
       <p>- Launch Fortnite</p> 
       <p>- On the top left, select the magnifying glass icon beside the Play button</p>
       <p>- Copy one of the following RAID island codes and paste it into the Search bar</p>
-      <br />
       <ul>
-        {RAIDMaps.map((map) => <li><b>{map.mapName}</b><Code code={map.mapCode} lang="js" /></li>)}
+        {RAIDMaps.map((map) => <li><h1>{map.mapName}</h1><Code code={map.mapCode} lang="js" /></li>)}
       </ul>
     </section>
     
