@@ -81,18 +81,16 @@ const RAIDMaps = [
         >
           Weapons
         </LinkButton> to check all available weapons in RAID
-      </p>
-      {
-        // only display if at least one social link is enabled
-        socialCount > 0 && (
-          <div class="social-wrapper">
-            <div class="social-links">Follow RAID on Socials:</div>
-            <Socials />
-          </div>
-        )
-      }
+      </p>  
       <br />
       <p><b>NOTE: This game is not sponsored, endorsed, or administered by Epic Games, Inc.</b></p>
+
+      <table style="width:100%" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>Follow UEFN RAID on Socials:</td>
+          <td style="width:60%"><Socials /></td>
+        </tr>
+      </table>
     </section>
 
     <Hr />
@@ -199,4 +197,5 @@ const RAIDMaps = [
   .all-posts-btn-wrapper {
     @apply my-8 text-center;
   }
+
 </style>
