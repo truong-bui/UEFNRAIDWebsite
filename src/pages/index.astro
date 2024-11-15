@@ -10,7 +10,7 @@ import Card from "@components/Card";
 import Socials from "@components/Socials.astro";
 import getSortedPosts from "@utils/getSortedPosts";
 import { SITE, SOCIALS } from "@config";
-import { Image } from "astro:assets";
+import { Image } from 'astro:assets';
 import RaidMarketThumbnail from "@assets/images/thumbnails/market/RaidMarketThumbnail.png";
 import MagicButtons from "../components/MagicButtons.astro";
 const posts = await getCollection("blog");
@@ -21,7 +21,10 @@ const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
 
 const socialCount = SOCIALS.filter(social => social.active).length;
 
-const RAIDMaps = [{ mapName: "RAID - MARKET", mapCode: "8615-7337-4501" }];
+const RAIDMaps = [ 
+  {mapName : "RAID - MARKET", mapCode : "8615-7337-4501"},  
+  
+  ];
 ---
 
 <Layout>
@@ -46,20 +49,14 @@ const RAIDMaps = [{ mapName: "RAID - MARKET", mapCode: "8615-7337-4501" }];
         <span class="sr-only">RSS Feed</span>
       </a>
 
-      <Image
-        src={RaidMarketThumbnail}
-        alt="RaidMarketThumbnail"
-        width="1920"
-        height="1080"
-      />
+      <Image src={RaidMarketThumbnail} alt="RaidMarketThumbnail" width="1920" height="1080" />
       <br />
 
       <p>
-        RAID is a fast-paced, high-competitive, tactical third-person shooter
-        created in Fortnite.
-      </p>
+        RAID is a fast-paced, high-competitive, tactical third-person shooter created in Fortnite. 
+      </p>      
       <p>
-        Visit
+        Visit  
         <LinkButton
           className="underline decoration-dashed underline-offset-4 hover:text-skin-accent"
           href="/learn"
@@ -68,7 +65,7 @@ const RAIDMaps = [{ mapName: "RAID - MARKET", mapCode: "8615-7337-4501" }];
         </LinkButton> to learn more about RAID game-play mechanics
       </p>
       <p>
-        Visit
+        Visit  
         <LinkButton
           className="underline decoration-dashed underline-offset-4 hover:text-skin-accent"
           href="/maps"
@@ -77,7 +74,7 @@ const RAIDMaps = [{ mapName: "RAID - MARKET", mapCode: "8615-7337-4501" }];
         </LinkButton> to see more details about RAID maps
       </p>
       <p>
-        Visit
+        Visit  
         <LinkButton
           className="underline decoration-dashed underline-offset-4 hover:text-skin-accent"
           href="/weapons"
@@ -85,46 +82,31 @@ const RAIDMaps = [{ mapName: "RAID - MARKET", mapCode: "8615-7337-4501" }];
           Weapons
         </LinkButton> to check all available weapons in RAID
       </p>
-
-      <div class="social-wrapper">
-        <div class="social-links">Follow RAID on Socials:</div>
-        <Socials />
-      </div>
-
+      {
+        // only display if at least one social link is enabled
+        socialCount > 0 && (
+          <div class="social-wrapper">
+            <div class="social-links">Follow RAID on Socials:</div>
+            <Socials />
+          </div>
+        )
+      }
       <br />
-      <p>
-        <b
-          >NOTE: This game is not sponsored, endorsed, or administered by Epic
-          Games, Inc.</b>
-      </p>
+      <p><b>NOTE: This game is not sponsored, endorsed, or administered by Epic Games, Inc.</b></p>
     </section>
 
     <Hr />
     <section id="hero">
       <h1>RAID Island Codes</h1>
       <p>To look for a RAID map in Fortnite, follow these steps:</p>
-      <p>- Launch Fortnite</p>
-      <p>
-        - On the top left, select the magnifying glass icon beside the Play
-        button
-      </p>
-      <p>
-        - Copy one of the following RAID island codes and paste it into the
-        Search bar
-      </p>
+      <p>- Launch Fortnite</p> 
+      <p>- On the top left, select the magnifying glass icon beside the Play button</p>
+      <p>- Copy one of the following RAID island codes and paste it into the Search bar</p>
       <ul>
-        {
-          RAIDMaps.map(map => (
-            <li>
-              <>
-                <h1>{map.mapName}</h1>
-                <Code code={map.mapCode} lang="js" />
-              </>
-            </li>
-          ))
-        }
+        {RAIDMaps.map((map) => <li><h1>{map.mapName}</h1><Code code={map.mapCode} lang="js" /></li>)}
       </ul>
-    </section>
+      
+    </section>   
     {
       featuredPosts.length > 0 && (
         <>
@@ -144,7 +126,7 @@ const RAIDMaps = [{ mapName: "RAID - MARKET", mapCode: "8615-7337-4501" }];
         </>
       )
     }
-    <br />
+    <br />    
     <Hr />
     {
       recentPosts.length > 0 && (
