@@ -1,6 +1,6 @@
 ---
 import { getCollection } from "astro:content";
-import { Code } from "astro:components";
+import { Code } from 'astro-expressive-code/components'
 import Layout from "@layouts/Layout.astro";
 import Header from "@components/Header.astro";
 import Footer from "@components/Footer.astro";
@@ -12,7 +12,6 @@ import getSortedPosts from "@utils/getSortedPosts";
 import { SITE, SOCIALS } from "@config";
 import { Image } from 'astro:assets';
 import RaidMarketThumbnail from "@assets/images/thumbnails/market/RaidMarketThumbnail.png";
-import MagicButtons from "../components/MagicButtons.astro";
 const posts = await getCollection("blog");
 
 const sortedPosts = getSortedPosts(posts);
@@ -101,7 +100,7 @@ const RAIDMaps = [
       <p>- On the top left, select the magnifying glass icon beside the Play button</p>
       <p>- Copy one of the following RAID island codes and paste it into the Search bar</p>
       <ul>
-        {RAIDMaps.map((map) => <li><h1>{map.mapName}</h1><Code code={map.mapCode} lang="js" /></li>)}
+        {RAIDMaps.map((map) => <li ><Code code={map.mapCode} lang="js" title={map.mapName} /></li>)}
       </ul>
       
     </section>   
@@ -156,7 +155,6 @@ const RAIDMaps = [
         </svg>
       </LinkButton>
     </div>
-    <MagicButtons />
   </main>
   <Footer />
 </Layout>

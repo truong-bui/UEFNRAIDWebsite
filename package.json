@@ -5,7 +5,7 @@
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro check && astro build",
-    "preview": "astro preview",
+    "preview": "wrangler pages dev ./dist",
     "sync": "astro sync",
     "astro": "astro",
     "format:check": "prettier --check . --plugin=prettier-plugin-astro",
@@ -17,6 +17,7 @@
     "@astrojs/rss": "^4.0.9",
     "@resvg/resvg-js": "^2.6.2",
     "@webcomponents/template-shadowroot": "^0.2.1",
+    "astro-expressive-code": "^0.38.3",
     "fuse.js": "^7.0.0",
     "lit": "^3.2.1",
     "lodash.kebabcase": "^4.1.1",
@@ -46,6 +47,6 @@
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "typescript-eslint": "^8.5.0",
-    "wrangler": "^3.86.1"
+    "wrangler": "^3.87.0"
   }
 }

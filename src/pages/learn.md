@@ -12,13 +12,19 @@ The Raider's objective is to plant a bomb, while the Defender aims to stop them.
 There are 51 selected weapons and items in RAID. RAID features Kill Achievement and Ranking System.
 
 # Game-play and general rules
+- Each match has 15 rounds. Note: Each match is supposed to have 30 rounds, and teams will be rotated after 15 rounds. However, the Team Rotation setting is not working right now, so I have to disable It. It will be updated when Epic Games fixes this issue in the future.
 - Each round lasts 150 seconds, plus 45 seconds if the Raider plants the bomb.
 - Raider's objectives: Plant the bomb at bombsite A or B. Or eliminate all Defenders before time out.
 - Defender's objectives: Defends bombsites A and B, defuse the bomb if the Raider plants it, or eliminate all the Raiders.
+- It takes 4 seconds to plant or defuse the bomb.
+<video width="1280" height="720" controls src="/assets/videos/bomb-planted.webm"></video>
+
 - Each team receives 1000 gold each round, and the winning team gets an extra 2000 gold. The player receives 300 gold for each elimination.
 - The player acquires weapons through the weapon shop UI that appears at the start of the game.
 - The player has 30 seconds to buy the weapon before the weapon shop automatically closes. However, the player can close the weapon shop UI after 5 seconds.
 - Once the weapon shop UI closes. It will not show up again until the next round.
+
+<video width="1280" height="720" controls src="/assets/videos/weapon-shop-ui.webm"></video>
 
 # Kill achievements system
 - RAID tracks the following kill achievements: Headshot, Singlekill, Doublekill, Triplekill, Quadrakill, and Pentakill. 

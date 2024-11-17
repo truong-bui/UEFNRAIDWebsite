@@ -94,12 +94,8 @@
   }
 
   /* ===== Code Blocks & Syntax Highlighting ===== */
-  pre:has(code) {
+  /* pre:has(code) {
     @apply border border-skin-line;
-    overflow: auto;
-    padding: 1rem;
-    border-radius: 0.5rem;
-    position: relative;
   }
   code,
   blockquote {
@@ -108,21 +104,17 @@
 
   pre > code {
     white-space: pre;
-    overflow: auto;
-    padding: 1rem;
-    border-radius: 0.5rem;
-    position: relative;
-  }
+  } */
 
   /* Apply Dark Theme (if multi-theme specified) */
-  html[data-theme="dark"] pre:has(code),
+  /* html[data-theme="dark"] pre:has(code),
   html[data-theme="dark"] pre:has(code) span {
     color: var(--shiki-dark) !important;
     background-color: var(--shiki-dark-bg) !important;
     font-style: var(--shiki-dark-font-style) !important;
     font-weight: var(--shiki-dark-font-weight) !important;
     text-decoration: var(--shiki-dark-text-decoration) !important;
-  }
+  } */
 }
 
 @layer components {
