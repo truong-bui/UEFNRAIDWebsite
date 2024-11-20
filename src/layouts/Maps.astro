@@ -3,51 +3,32 @@ import Layout from "@layouts/Layout.astro";
 import Main from "@layouts/Main.astro";
 import Header from "@components/Header.astro";
 import Footer from "@components/Footer.astro";
-import MapPagination from "@components/MapPagination.astro";
-import MapCard from "@components/MapCard";
+import Pagination from "@components/Pagination.astro";
+import Card from "@components/Card";
 import { SITE } from "@config";
 import type { Page } from "astro";
 import type { CollectionEntry } from "astro:content";
-import { Code } from "astro-expressive-code/components";
+
 export interface Props {
-  page: Page<CollectionEntry<"map">>;
+  page: Page<CollectionEntry<"blog">>;
 }
 
 const { page } = Astro.props;
 ---
 
-<Layout title={`Maps | ${SITE.title}`}>
-  <Header activeNav="maps" />
-  
-  <Main pageTitle="Maps" pageDesc="All RAID maps">
-    
+<Layout title={`Posts | ${SITE.title}`}>
+  <Header activeNav="posts" />
+  <Main pageTitle="Posts" pageDesc="All the articles I've posted.">
     <ul>
       {
         page.data.map(({ data, slug }) => (
-        <style>
-          .container {
-          display:flex;
-          align-items:center;
-        }
-
-.container img {
-           max-width: 100%;
-    max-height:100%;
-    float: left;
-        }
-
-.container text {
-          font-size: 20px;          
-        }
-          </style>
-          
-          <MapCard href={`/maps/${slug}/`} frontmatter={data} > <Code code="123458" lang="js" title="RAID - MARKET" /></MapCard>
+          <Card href={`/posts/${slug}/`} frontmatter={data} />
         ))
       }
     </ul>
   </Main>
 
-  <MapPagination {page} />
+  <Pagination {page} />
 
   <Footer noMarginTop={page.lastPage > 1} />
 </Layout>

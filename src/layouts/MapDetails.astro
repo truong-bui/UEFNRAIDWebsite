@@ -10,11 +10,11 @@ import ShareLinks from "@components/ShareLinks.astro";
 import { SITE } from "@config";
 
 export interface Props {
-  post: CollectionEntry<"map">;
-  posts: CollectionEntry<"map">[];
+  post: CollectionEntry<"blog">;
+  posts: CollectionEntry<"blog">[];
 }
 
-const { map, maps } = Astro.props;
+const { post, posts } = Astro.props;
 
 const {
   title,
@@ -26,13 +26,13 @@ const {
   modDatetime,
   tags,
   editPost,
-} = map.data;
+} = post.data;
 
-const { Content } = await map.render();
+const { Content } = await post.render();
 
 const ogImageUrl = typeof ogImage === "string" ? ogImage : ogImage?.src;
 const ogUrl = new URL(
-  ogImageUrl ?? `/maps/${slugifyStr(title)}.png`,
+  ogImageUrl ?? `/posts/${slugifyStr(title)}.png`,
   Astro.url.origin
 ).href;
 
@@ -49,12 +49,12 @@ const layoutProps = {
 
 /* ========== Prev/Next Posts ========== */
 
-const allPosts = maps.map(({ data: { title }, slug }) => ({
+const allPosts = posts.map(({ data: { title }, slug }) => ({
   slug,
   title,
 }));
 
-const currentPostIndex = allPosts.findIndex(a => a.slug === map.slug);
+const currentPostIndex = allPosts.findIndex(a => a.slug === post.slug);
 
 const prevPost = currentPostIndex !== 0 ? allPosts[currentPostIndex - 1] : null;
 const nextPost =
@@ -84,11 +84,15 @@ const nextPost =
       size="lg"
       className="my-2"
       editPost={editPost}
-      postId={map.id}
+      postId={post.id}
     />
     <article id="article" class="prose mx-auto mt-8 max-w-3xl">
       <Content />
     </article>
+
+    <ul class="my-8">
+      {tags.map(tag => <Tag tag={slugifyStr(tag)} />)}
+    </ul>
 
     <div
       class="flex flex-col-reverse items-center justify-between gap-6 sm:flex-row-reverse sm:items-end sm:gap-4"
