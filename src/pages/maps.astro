@@ -1,10 +1,21 @@
 ---
-layout: ../layouts/MapsLayout.astro
-title: "Maps"
+import MapsLayout from "@layouts/MapsLayout.astro";
+import { Image } from 'astro:assets';
+import RaidMarketThumbnail from "@assets/images/thumbnails/market/RaidMarketThumbnail.png";
+const pageTitle = "Maps";
+const allMaps = await Astro.glob("../pages/maps/*.md");
 ---
+<MapsLayout title={pageTitle}>
+  <ul>    
+    {allMaps.map((map) => 
+      <li>
+          <h2><a href={map.url}>{map.frontmatter.title} </a></h2>
+          <a href={map.url}><Image src={RaidMarketThumbnail} alt="RaidMarketThumbnail" width="1920" height="1080"/></a>
+               
+      </li>)}
+  </ul>
 
-## This page is in construction. Please stay in touch!
-
+</MapsLayout>
 <!-- AstroPaper is a minimal, responsive and SEO-friendly Astro blog theme. I designed and crafted this based on [my personal blog](https://satnaing.dev/blog).
 
 This theme is aimed to be accessible out of the box. Light and dark mode are supported by
