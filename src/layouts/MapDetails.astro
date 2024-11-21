@@ -3,12 +3,13 @@ import { SITE } from "@config";
 import Breadcrumbs from "@components/Breadcrumbs.astro";
 import Footer from "@components/Footer.astro";
 import Header from "@components/Header.astro";
-import MapDetailsLayout from "./MapDetailsLayout.astro";
+import Layout from "./Layout.astro";
 import { Image, getImage } from "astro:assets";
 import type { ImageMetadata } from "astro";
 import { YouTube } from 'astro-embed';
 import LinkButton from "@components/LinkButton.astro";
 import { Code } from 'astro-expressive-code/components'
+import ShareLinks from "@components/ShareLinks.astro";
 
 interface Props {  
   frontmatter: {
@@ -31,11 +32,11 @@ const imagePaths = Object.keys(images).filter(imagePath => {
 });
 ---
 
-<MapDetailsLayout title={`${frontmatter.title} | ${SITE.title}`}>
+<Layout title={`${frontmatter.title} | ${SITE.title}`}>
   <Header />
   <Breadcrumbs />
   <main id="main-content">
-    <section id="maps" class="prose mb-28 max-w-3xl prose-img:border-0">
+    <section id="maps" class="gallery prose mb-28 max-w-3xl prose-img:border-0">
       <h1 class="text-2xl tracking-wider sm:text-3xl">{frontmatter.title}</h1>
 
       {frontmatter.trailerId ? <YouTube id={frontmatter.trailerId} /> <br />: ""}
@@ -46,7 +47,8 @@ const imagePaths = Object.keys(images).filter(imagePath => {
       {frontmatter.raidTDMCode ? <Code code={frontmatter.raidTDMCode} lang="js" title="RAID:TDM - MARKET" /> <br/> : ""}
 
       <slot />
-      <h1 class="text-2xl tracking-wider sm:text-3xl">Gallery</h1>   
+      <h1 class="text-2xl tracking-wider sm:text-3xl">Gallery</h1>
+      <br />
       <div
         id="gallery"
         class="md:grid-cols-2 container mx-auto grid grid-cols-4 gap-1 px-1 pb-1"
@@ -80,7 +82,7 @@ const imagePaths = Object.keys(images).filter(imagePath => {
           })
         }
       </div>
-
+      
       <script> 
       import PhotoSwipeLightbox from "photoswipe/lightbox";
       import "photoswipe/style.css";
@@ -93,7 +95,12 @@ const imagePaths = Object.keys(images).filter(imagePath => {
         lightbox.init();
       });
       </script>
+      
     </section>
+    <section id="share" class="default">
+      <ShareLinks />
+    </section>
+    <br />
   </main>
   <Footer />
-</MapDetailsLayout>
+</Layout>

@@ -29,7 +29,7 @@ const RAIDMaps = [
 <Layout>
   <Header />
   <main id="main-content">
-    <section id="hero">
+    <section id="hero" class="default">
       <h1>About</h1>
       <a
         target="_blank"
@@ -95,7 +95,7 @@ const RAIDMaps = [
     </section>
 
     <Hr />
-    <section id="hero">
+    <section id="hero" class="default">
       <h1>RAID Island Codes</h1>
       <p>To look for a RAID map in Fortnite, follow these steps:</p>
       <p>- Launch Fortnite</p> 
@@ -109,7 +109,7 @@ const RAIDMaps = [
     {
       featuredPosts.length > 0 && (
         <>
-          <section id="featured">
+          <section id="featured" class="default">
             <h2>Featured</h2>
             <ul>
               {featuredPosts.map(({ data, slug }) => (
@@ -129,7 +129,7 @@ const RAIDMaps = [
     <Hr />
     {
       recentPosts.length > 0 && (
-        <section id="recent-posts">
+        <section id="recent-posts" class="default">
           <h2>Recent Posts</h2>
           <ul>
             {recentPosts.map(
