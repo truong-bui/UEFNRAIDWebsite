@@ -18,7 +18,7 @@ RAID is a fast-paced, high-competitive, tactical third-person shooter created in
 
 RAID - MARKET Island Code: 
 
-```
+```js
 8615-7337-4501
 ```
 
@@ -30,3 +30,5 @@ RAID - MARKET Trailer
 </iframe>
 
 Please visit [Learn](/learn) page to learn more about RAID game-play mechanics
+
+Please visit [Maps](/maps) page to see more details about the map
