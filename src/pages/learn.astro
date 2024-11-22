@@ -1,0 +1,779 @@
+---
+import { SITE } from "@config";
+import Breadcrumbs from "@components/Breadcrumbs.astro";
+import Footer from "@components/Footer.astro";
+import Header from "@components/Header.astro";
+import Layout from "../layouts/Layout.astro";
+import { Image } from 'astro:assets';
+import Icon from "@components/Icon.astro";
+import LinkButton from "@components/LinkButton.astro";
+
+const title = "Learn";
+---
+
+<Layout title={`${title} | ${SITE.title}`}>
+  <Header activeNav="learn" />
+  <Breadcrumbs />
+  <main id="main-content">
+    <section
+      id="learn"
+      class="default prose mb-28 max-w-3xl prose-img:border-0"
+    >
+      <h1 class="text-2xl tracking-wider sm:text-3xl">{title}</h1>
+
+      <h1>Introduction</h1>
+      <p>
+        RAID is an objective-based third-person shooter created in Fortnite.
+      </p>
+
+      <p>
+        Two opposing teams, the "Defender" and the "Raider," compete against
+        each other.
+      </p>
+
+      <p>
+        The Raider's objective is to plant a bomb, while the Defender aims to
+        stop them. Players acquire weapons through a weapon shop UI that appears
+        at the start of the game.
+      </p>
+
+      <p>RAID features Kill Achievement and Ranking System.</p>
+
+      <h1>Game-play and general rules</h1>
+      <ul>
+        <li>
+          <p>
+            Each match has 15 rounds. Note: Each match is supposed to have 30
+            rounds, and teams will be rotated after 15 rounds. However, the Team
+            Rotation setting is not working right now, so I have to disable It.
+            It will be updated when Epic Games fixes this issue in the future.
+          </p>
+        </li>
+        <li>
+          <p>
+            Each round lasts 150 seconds, plus 45 seconds if the Raider plants
+            the bomb.
+          </p>
+        </li>
+        <li>
+          <p>
+            Raider's objectives: Plant the bomb at bombsite A or B. Or eliminate
+            all Defenders before time out.
+          </p>
+        </li>
+        <li>
+          <p>
+            Defender's objectives: Defends bombsites A and B, defuse the bomb if
+            the Raider plants it, or eliminate all the Raiders.
+          </p>
+        </li>
+        <li><p>It takes 4 seconds to plant or defuse the bomb.</p></li>
+
+        <video controls>
+          <source src="/videos/bomb-planted.webm" type="video/webm" />
+        </video>
+
+        <li>
+          <p>
+            Each team receives 1000 gold each round, and the winning team gets
+            an extra 2000 gold. The player receives 300 gold for each
+            elimination.
+          </p>
+        </li>
+        <li>
+          <p>
+            The player acquires weapons through the weapon shop UI that appears
+            at the start of the game.
+          </p>
+        </li>
+        <li>
+          <p>
+            The player has 30 seconds to buy the weapon before the weapon shop
+            automatically closes. However, the player can close the weapon shop
+            UI after 5 seconds.
+          </p>
+        </li>
+        <li>
+          <p>
+            Once the weapon shop UI closes. It will not show up again until the
+            next round.
+          </p>
+        </li>
+
+        <video controls>
+          <source src="/videos/weapon-shop-ui.webm" type="video/webm" />
+        </video>
+      </ul>
+
+      <h1>Kill achievements system</h1>
+      <ul>
+        <li>
+          <p>
+            RAID tracks the following kill achievements: Headshot, Singlekill,
+            Doublekill, Triplekill, Quadrakill, and Pentakill.
+          </p>
+        </li>
+        <li>
+          <p>
+            To achieve multi-kill achievements, the player must eliminate an
+            opponent within 4 seconds.
+          </p>
+        </li>
+      </ul>
+      <h1>Ranking system</h1>
+      <p>
+        In Raid, there is a Raid Point score to determine your ranking. You receive 10 Raid Points when winning a round and lose 10 Raid Points if you lose a round. There are a total of 11 rank tiers in RAID:
+      </p>
+      <table>
+        <caption>
+          RAID Ranking System
+        </caption>        
+        <tbody>
+          <!-- Unranked -->
+          <tr>
+            <td style="width:20%"> 
+              <Icon 
+                imagePath="/src/assets/images/icons/rank-icons/T_NoRank.png"
+                altText="Unranked"
+                name="Unranked"
+                width={96}
+                height={96}
+                minRP="0"
+                maxRP="99"
+              />
+            </td>
+            <td style="width:20%"></td>
+            <td style="width:20%"></td>
+            <td style="width:20%"></td>
+            <td style="width:20%"></td>
+          </tr>
+          <!-- Iron -->
+          <tr>
+            <td style="width:20%"> 
+              <Icon 
+                imagePath="/src/assets/images/icons/rank-icons/T_iron1.png"
+                altText="Iron"
+                name="Iron"
+                width={96}
+                height={96}
+                minRP="100"
+                maxRP="199"
+              />
+            </td>
+            <td style="width:20%"> 
+              <Icon 
+                imagePath="/src/assets/images/icons/rank-icons/T_iron2.png"
+                altText="Iron II"
+                name="Iron II"
+                width={96}
+                height={96}
+                minRP="200"
+                maxRP="299"
+              />
+            </td>
+            <td style="width:20%"> 
+              <Icon 
+                imagePath="/src/assets/images/icons/rank-icons/T_iron3.png"
+                altText="Iron III"
+                name="Iron III"
+                width={96}
+                height={96}
+                minRP="300"
+                maxRP="399"
+              />
+            </td>
+            <td style="width:20%"> 
+              <Icon 
+                imagePath="/src/assets/images/icons/rank-icons/T_iron4.png"
+                altText="Iron IV"
+                name="Iron IV"
+                width={96}
+                height={96}
+                minRP="400"
+                maxRP="499"
+              />
+            </td>
+            <td style="width:20%"> 
+              <Icon 
+                imagePath="/src/assets/images/icons/rank-icons/T_iron5.png"
+                altText="Iron V"
+                name="Iron V"
+                width={96}
+                height={96}
+                minRP="500"
+                maxRP="599"
+              />
+            </td>
+          </tr>
+
+          <!-- Bronze -->
+          <tr>
+            <td style="width:20%"> 
+              <Icon 
+                imagePath="/src/assets/images/icons/rank-icons/T_bronze1.png"
+                altText="Bronze"
+                name="Bronze"
+                width={96}
+                height={96}
+                minRP="600"
+                maxRP="699"
+              />
+            </td>
+            <td style="width:20%"> 
+              <Icon 
+                imagePath="/src/assets/images/icons/rank-icons/T_bronze2.png"
+                altText="Bronze II"
+                name="Bronze II"
+                width={96}
+                height={96}
+                minRP="700"
+                maxRP="799"
+              />
+            </td>
+            <td style="width:20%"> 
+              <Icon 
+                imagePath="/src/assets/images/icons/rank-icons/T_bronze3.png"
+                altText="Bronze III"
+                name="Bronze III"
+                width={96}
+                height={96}
+                minRP="800"
+                maxRP="899"
+              />
+            </td>
+            <td style="width:20%"> 
+              <Icon 
+                imagePath="/src/assets/images/icons/rank-icons/T_bronze4.png"
+                altText="Bronze IV"
+                name="Bronze IV"
+                width={96}
+                height={96}
+                minRP="900"
+                maxRP="999"
+              />
+            </td>
+            <td style="width:20%"> 
+              <Icon 
+                imagePath="/src/assets/images/icons/rank-icons/T_bronze5.png"
+                altText="Bronze V"
+                name="Bronze V"
+                width={96}
+                height={96}
+                minRP="1000"
+                maxRP="1099"
+              />
+            </td>
+          </tr>
+          
+          <!-- Silver -->
+          <tr>
+            <td style="width:20%"> 
+              <Icon 
+                imagePath="/src/assets/images/icons/rank-icons/T_silver1.png"
+                altText="Silver"
+                name="Silver"
+                width={96}
+                height={96}
+                minRP="1100"
+                maxRP="1199"
+              />
+            </td>
+            <td style="width:20%"> 
+              <Icon 
+                imagePath="/src/assets/images/icons/rank-icons/T_silver2.png"
+                altText="Silver II"
+                name="Silver II"
+                width={96}
+                height={96}
+                minRP="1200"
+                maxRP="1299"
+              />
+            </td>
+            <td style="width:20%"> 
+              <Icon 
+                imagePath="/src/assets/images/icons/rank-icons/T_silver3.png"
+                altText="Silver III"
+                name="Silver III"
+                width={96}
+                height={96}
+                minRP="1300"
+                maxRP="1399"
+              />
+            </td>
+            <td style="width:20%"> 
+              <Icon 
+                imagePath="/src/assets/images/icons/rank-icons/T_silver4.png"
+                altText="Silver IV"
+                name="Silver IV"
+                width={96}
+                height={96}
+                minRP="1400"
+                maxRP="1499"
+              />
+            </td>
+            <td style="width:20%"> 
+              <Icon 
+                imagePath="/src/assets/images/icons/rank-icons/T_silver5.png"
+                altText="Silver V"
+                name="Silver V"
+                width={96}
+                height={96}
+                minRP="1500"
+                maxRP="1599"
+              />
+            </td>
+          </tr>
+
+          <!-- Gold -->
+          <tr>
+            <td style="width:20%"> 
+              <Icon 
+                imagePath="/src/assets/images/icons/rank-icons/T_gold1.png"
+                altText="Gold"
+                name="Gold"
+                width={96}
+                height={96}
+                minRP="1600"
+                maxRP="1699"
+              />
+            </td>
+            <td style="width:20%"> 
+              <Icon 
+                imagePath="/src/assets/images/icons/rank-icons/T_gold2.png"
+                altText="Gold II"
+                name="Gold II"
+                width={96}
+                height={96}
+                minRP="1700"
+                maxRP="1799"
+              />
+            </td>
+            <td style="width:20%"> 
+              <Icon 
+                imagePath="/src/assets/images/icons/rank-icons/T_gold3.png"
+                altText="Gold III"
+                name="Gold III"
+                width={96}
+                height={96}
+                minRP="1800"
+                maxRP="1899"
+              />
+            </td>
+            <td style="width:20%"> 
+              <Icon 
+                imagePath="/src/assets/images/icons/rank-icons/T_gold4.png"
+                altText="Gold IV"
+                name="Gold IV"
+                width={96}
+                height={96}
+                minRP="1900"
+                maxRP="1999"
+              />
+            </td>
+            <td style="width:20%"> 
+              <Icon 
+                imagePath="/src/assets/images/icons/rank-icons/T_gold5.png"
+                altText="Gold V"
+                name="Gold V"
+                width={96}
+                height={96}
+                minRP="2000"
+                maxRP="2099"
+              />
+            </td>
+          </tr>
+
+          <!-- Platinum -->
+          <tr>
+            <td style="width:20%"> 
+              <Icon 
+                imagePath="/src/assets/images/icons/rank-icons/T_platinum1.png"
+                altText="Platinum"
+                name="Platinum"
+                width={96}
+                height={96}
+                minRP="2100"
+                maxRP="2199"
+              />
+            </td>
+            <td style="width:20%"> 
+              <Icon 
+                imagePath="/src/assets/images/icons/rank-icons/T_platinum2.png"
+                altText="Platinum II"
+                name="Platinum II"
+                width={96}
+                height={96}
+                minRP="2200"
+                maxRP="2299"
+              />
+            </td>
+            <td style="width:20%"> 
+              <Icon 
+                imagePath="/src/assets/images/icons/rank-icons/T_platinum3.png"
+                altText="Platinum III"
+                name="Platinum III"
+                width={96}
+                height={96}
+                minRP="2300"
+                maxRP="2399"
+              />
+            </td>
+            <td style="width:20%"> 
+              <Icon 
+                imagePath="/src/assets/images/icons/rank-icons/T_platinum4.png"
+                altText="Platinum IV"
+                name="Platinum IV"
+                width={96}
+                height={96}
+                minRP="2400"
+                maxRP="2499"
+              />
+            </td>
+            <td style="width:20%"> 
+              <Icon 
+                imagePath="/src/assets/images/icons/rank-icons/T_platinum5.png"
+                altText="Platinum V"
+                name="Platinum V"
+                width={96}
+                height={96}
+                minRP="2500"
+                maxRP="2599"
+              />
+            </td>
+          </tr>
+
+          <!-- Diamond -->
+          <tr>
+            <td style="width:20%"> 
+              <Icon 
+                imagePath="/src/assets/images/icons/rank-icons/T_diamond1.png"
+                altText="Diamond"
+                name="Diamond"
+                width={96}
+                height={96}
+                minRP="2600"
+                maxRP="2699"
+              />
+            </td>
+            <td style="width:20%"> 
+              <Icon 
+                imagePath="/src/assets/images/icons/rank-icons/T_diamond2.png"
+                altText="Diamond II"
+                name="Diamond II"
+                width={96}
+                height={96}
+                minRP="2700"
+                maxRP="2799"
+              />
+            </td>
+            <td style="width:20%"> 
+              <Icon 
+                imagePath="/src/assets/images/icons/rank-icons/T_diamond3.png"
+                altText="Diamond III"
+                name="Diamond III"
+                width={96}
+                height={96}
+                minRP="2800"
+                maxRP="2899"
+              />
+            </td>
+            <td style="width:20%"> 
+              <Icon 
+                imagePath="/src/assets/images/icons/rank-icons/T_diamond4.png"
+                altText="Diamond IV"
+                name="Diamond IV"
+                width={96}
+                height={96}
+                minRP="2900"
+                maxRP="2999"
+              />
+            </td>
+            <td style="width:20%"> 
+              <Icon 
+                imagePath="/src/assets/images/icons/rank-icons/T_diamond5.png"
+                altText="Diamond V"
+                name="Diamond V"
+                width={96}
+                height={96}
+                minRP="3000"
+                maxRP="3099"
+              />
+            </td>
+          </tr>
+
+          <!-- Elite -->
+          <tr>
+            <td style="width:20%"> 
+              <Icon 
+                imagePath="/src/assets/images/icons/rank-icons/T_elite1.png"
+                altText="Elite"
+                name="Elite"
+                width={96}
+                height={96}
+                minRP="3100"
+                maxRP="3199"
+              />
+            </td>
+            <td style="width:20%"> 
+              <Icon 
+                imagePath="/src/assets/images/icons/rank-icons/T_elite2.png"
+                altText="Elite II"
+                name="Elite II"
+                width={96}
+                height={96}
+                minRP="3200"
+                maxRP="3299"
+              />
+            </td>
+            <td style="width:20%"> 
+              <Icon 
+                imagePath="/src/assets/images/icons/rank-icons/T_elite3.png"
+                altText="Elite III"
+                name="Elite III"
+                width={96}
+                height={96}
+                minRP="3300"
+                maxRP="3399"
+              />
+            </td>
+            <td style="width:20%"> 
+              <Icon 
+                imagePath="/src/assets/images/icons/rank-icons/T_elite4.png"
+                altText="Elite IV"
+                name="Elite IV"
+                width={96}
+                height={96}
+                minRP="3400"
+                maxRP="3499"
+              />
+            </td>
+            <td style="width:20%"> 
+              <Icon 
+                imagePath="/src/assets/images/icons/rank-icons/T_elite5.png"
+                altText="Elite V"
+                name="Elite V"
+                width={96}
+                height={96}
+                minRP="3500"
+                maxRP="3599"
+              />
+            </td>
+          </tr>
+
+          <!-- Master -->
+          <tr>
+            <td style="width:20%"> 
+              <Icon 
+                imagePath="/src/assets/images/icons/rank-icons/T_master1.png"
+                altText="Master"
+                name="Master"
+                width={96}
+                height={96}
+                minRP="3600"
+                maxRP="3699"
+              />
+            </td>
+            <td style="width:20%"> 
+              <Icon 
+                imagePath="/src/assets/images/icons/rank-icons/T_master2.png"
+                altText="Master II"
+                name="Master II"
+                width={96}
+                height={96}
+                minRP="3700"
+                maxRP="3799"
+              />
+            </td>
+            <td style="width:20%"> 
+              <Icon 
+                imagePath="/src/assets/images/icons/rank-icons/T_master3.png"
+                altText="Master III"
+                name="Master III"
+                width={96}
+                height={96}
+                minRP="3800"
+                maxRP="3899"
+              />
+            </td>
+            <td style="width:20%"> 
+              <Icon 
+                imagePath="/src/assets/images/icons/rank-icons/T_master4.png"
+                altText="Master IV"
+                name="Master IV"
+                width={96}
+                height={96}
+                minRP="3900"
+                maxRP="3999"
+              />
+            </td>
+            <td style="width:20%"> 
+              <Icon 
+                imagePath="/src/assets/images/icons/rank-icons/T_master5.png"
+                altText="Master V"
+                name="Master V"
+                width={96}
+                height={96}
+                minRP="4000"
+                maxRP="4099"
+              />
+            </td>
+          </tr>
+          
+          <!-- Grandmaster -->
+          <tr>
+            <td style="width:20%"> 
+              <Icon 
+                imagePath="/src/assets/images/icons/rank-icons/T_grandmaster1.png"
+                altText="Grandmaster"
+                name="Grandmaster"
+                width={96}
+                height={96}
+                minRP="4100"
+                maxRP="4199"
+              />
+            </td>
+            <td style="width:20%"> 
+              <Icon 
+                imagePath="/src/assets/images/icons/rank-icons/T_grandmaster2.png"
+                altText="Grandmaster II"
+                name="Grandmaster II"
+                width={96}
+                height={96}
+                minRP="4200"
+                maxRP="4299"
+              />
+            </td>
+            <td style="width:20%"> 
+              <Icon 
+                imagePath="/src/assets/images/icons/rank-icons/T_grandmaster3.png"
+                altText="Grandmaster III"
+                name="Grandmaster III"
+                width={96}
+                height={96}
+                minRP="4300"
+                maxRP="4399"
+              />
+            </td>
+            <td style="width:20%"> 
+              <Icon 
+                imagePath="/src/assets/images/icons/rank-icons/T_grandmaster4.png"
+                altText="Grandmaster IV"
+                name="Grandmaster IV"
+                width={96}
+                height={96}
+                minRP="4400"
+                maxRP="4499"
+              />
+            </td>
+            <td style="width:20%"> 
+              <Icon 
+                imagePath="/src/assets/images/icons/rank-icons/T_grandmaster5.png"
+                altText="Grandmaster V"
+                name="Grandmaster V"
+                width={96}
+                height={96}
+                minRP="4500"
+                maxRP="4599"
+              />
+            </td>
+          </tr>
+
+          <!-- Legendary -->
+          <tr>
+            <td style="width:20%"> 
+              <Icon 
+                imagePath="/src/assets/images/icons/rank-icons/T_legendary1.png"
+                altText="Legendary"
+                name="Legendary"
+                width={96}
+                height={96}
+                minRP="4600"
+                maxRP="4699"
+              />
+            </td>
+            <td style="width:20%"> 
+              <Icon 
+                imagePath="/src/assets/images/icons/rank-icons/T_legendary2.png"
+                altText="Legendary II"
+                name="Legendary II"
+                width={96}
+                height={96}
+                minRP="4700"
+                maxRP="4799"
+              />
+            </td>
+            <td style="width:20%"> 
+              <Icon 
+                imagePath="/src/assets/images/icons/rank-icons/T_legendary3.png"
+                altText="Legendary III"
+                name="Legendary III"
+                width={96}
+                height={96}
+                minRP="4800"
+                maxRP="4899"
+              />
+            </td>
+            <td style="width:20%"> 
+              <Icon 
+                imagePath="/src/assets/images/icons/rank-icons/T_legendary4.png"
+                altText="Legendary IV"
+                name="Legendary IV"
+                width={96}
+                height={96}
+                minRP="4900"
+                maxRP="4999"
+              />
+            </td>
+            <td style="width:20%"> 
+              <Icon 
+                imagePath="/src/assets/images/icons/rank-icons/T_legendary5.png"
+                altText="Legendary V"
+                name="Legendary V"
+                width={96}
+                height={96}
+                minRP="5000"
+                maxRP="N/A"
+              />
+            </td>
+          </tr>          
+        </tbody>        
+      </table>
+      <!-- <ul>
+        <li>Unranked</li>
+        <li>Iron I, Iron II, Iron III, Iron IV, Iron V</li>
+        <li>Bronze I, Bronze II, Bronze III, Bronze IV, Bronze V</li>
+        <li>Silver I, Silver II, Silver III, Silver IV, Silver V</li>
+        <li>Gold I, Gold II, Gold III, Gold IV, Gold V</li>
+        <li>Platinum I, Platinum II, Platinum III, Platinum IV, Platinum V</li>
+        <li>Diamond I, Diamond II, Diamond III, Diamond IV, Diamond V</li>
+        <li>Elite I, Elite II, Elite III, Elite IV, Elite V</li>
+        <li>Master I, Master II, Master III, Master IV, Master V</li>
+        <li>
+          Grandmaster I, Grandmaster II, Grandmaster III, Grandmaster IV,
+          Grandmaster V
+        </li>
+        <li>
+          Legendary I, Legendary II, Legendary III, Legendary IV, Legendary V
+        </li>
+      </ul> -->
+
+      <h1>Accolades XP Awarding</h1>
+      <ul>
+        <li>
+          The player is awarded XP when eliminating an opponent, planting a
+          bomb, or defusing a bomb, and the bomb is denoted (for the planted
+          bomb player)
+        </li>
+      </ul>
+
+      <h1>Weapons</h1>
+      <p>
+        Visit <LinkButton href="/weapons">Weapons</LinkButton> page to see all available weapons and items in RAID
+      </p>
+
+      <h1>RAID: GHOST Game-play overview</h1>
+      <p><code> Work in progress. Please Stay in touch! </code></p>
+    </section>
+  </main>
+  <Footer />
+</Layout>
