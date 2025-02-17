@@ -4,6 +4,7 @@ import Breadcrumbs from "@components/Breadcrumbs.astro";
 import Footer from "@components/Footer.astro";
 import Header from "@components/Header.astro";
 import Layout from "layouts/Layout.astro";
+import Icon from "@components/Icon.astro";
 
 const title = "Weapons";
 ---
@@ -16,6 +17,45 @@ const title = "Weapons";
       <h1 class="text-2xl tracking-wider sm:text-3xl">{title}</h1>
       
       <p>Threre are total 51 selected weapons in Raid. All of them have Uncommon rarity.</p>
+      <table>
+        <caption>
+          PISTOL
+        </caption> 
+        <tr>
+          <th>Name</th>
+          <th>Icon</th>
+          <th>Damage</th>
+          <th>DPS</th>
+          <th>Fire Rate</th>
+          <th>Mag Size</th>
+          <th>Reload</th>
+          <th>Headshot</th>
+          <th>Price</th>
+        </tr>       
+        <tbody>
+          <!-- PISTOL -->
+          <tr>
+            <td style="vertical-align:middle">Pistol</td>
+            <td style="vertical-align:middle"> 
+              <Icon 
+                imagePath="/src/assets/images/weapons/Pistol/T_Pistol.png"
+                altText="Pistol"
+                name=""
+                width={64}
+                height={64}
+              />
+            </td>            
+            <td style="vertical-align:middle">25</td>
+            <td style="vertical-align:middle">168.75</td>
+            <td style="vertical-align:middle">6.75</td>
+            <td style="vertical-align:middle">16</td>
+            <td style="vertical-align:middle">1.47s</td>
+            <td style="vertical-align:middle">2x</td>
+            <td style="vertical-align:middle">$300</td>
+          </tr>
+           
+        </tbody>        
+      </table>
     </section>
   </main>
   <Footer />
