@@ -1,0 +1,51 @@
+---
+export const prerender = true;
+import BaseLayout from "@layouts/BaseLayout.astro";
+import { SITE } from "@lib/site";
+const updated = "2026-05-01";
+---
+
+<BaseLayout
+  title="Privacy Policy"
+  description="What data this site collects and how to opt out."
+>
+  <section class="mx-auto max-w-3xl px-4 py-16">
+    <h1 class="text-4xl font-extrabold text-ink-50 mb-2">Privacy Policy</h1>
+    <p class="text-sm text-ink-400 mb-8">Last updated: {updated}</p>
+
+    <div class="prose-raid">
+      <h2>What we collect</h2>
+      <p>
+        {SITE.name} runs Google Analytics 4 to understand which pages get traffic and which
+        platforms players come from. GA4 sets cookies and reports anonymized page views, sessions,
+        and approximate location. We do not run a consent banner — if you'd rather not be measured,
+        block analytics with a browser extension (uBlock Origin, Privacy Badger) or your browser's
+        tracking protection.
+      </p>
+      <p>
+        Cloudflare's edge collects standard request logs (IP, user agent, response codes) for
+        abuse prevention and performance metrics. We don't add a separate Cloudflare Web Analytics
+        beacon — the edge already does that server-side.
+      </p>
+
+      <h2>Forms</h2>
+      <p>
+        The contact form and newsletter signup are processed by Formspark. Submitted email
+        addresses, names, and messages are stored in Formspark's dashboard and used only to
+        respond to you or send the newsletter you signed up for. Reply to any newsletter to
+        unsubscribe.
+      </p>
+
+      <h2>Cookies</h2>
+      <p>
+        First-party preference cookies for theme/UI state. Third-party cookies from GA4 only.
+        No advertising cookies, no remarketing.
+      </p>
+
+      <h2>Contact</h2>
+      <p>
+        Questions about this policy? <a href="/contact">Get in touch</a>.
+      </p>
+    </div>
+  </section>
+</BaseLayout>

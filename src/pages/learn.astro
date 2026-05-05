@@ -1,0 +1,75 @@
+---
+export const prerender = true;
+import BaseLayout from "@layouts/BaseLayout.astro";
+import { SITE } from "@lib/site";
+
+const steps = [
+  {
+    n: 1,
+    title: "Open Fortnite",
+    body: "Launch Fortnite on any platform. Switch the mode to 'Discover' from the lobby.",
+  },
+  {
+    n: 2,
+    title: "Enter the island code",
+    body: `Paste ${SITE.islandCode} into the search bar and select RAID from the results.`,
+  },
+  {
+    n: 3,
+    title: "Pick a side",
+    body: "You'll be assigned to Attack or Defense. Attackers plant the bomb at one of two sites; defenders prevent it or defuse.",
+  },
+  {
+    n: 4,
+    title: "Buy phase",
+    body: "Each round opens with a buy phase. Use earned credits to upgrade weapons, armor, and utility before the round timer runs.",
+  },
+  {
+    n: 5,
+    title: "Round play",
+    body: "Best of 24 rounds. Side swaps at half. Win rounds by elimination, bomb plant + detonation, or defuse.",
+  },
+];
+
+const tips = [
+  "Pre-aim common angles instead of swinging — RAID rewards positioning over reflex.",
+  "Save your economy. A losing team that overbuys round-to-round will stay losing.",
+  "Use utility (smokes, flashes) before pushing — never push into open sightlines blind.",
+  "Communicate site reads early. Defensive rotations are slow if mid is contested.",
+];
+---
+
+<BaseLayout
+  title="How to Play"
+  description="Beginner's guide to UEFN RAID — from finding the island code to mastering the buy phase."
+>
+  <section class="mx-auto max-w-3xl px-4 py-16">
+    <header class="mb-10">
+      <h1 class="text-4xl font-extrabold text-ink-50">How to Play</h1>
+      <p class="mt-2 text-ink-300">
+        A quick-start guide to RAID. Read once, drop in, learn the rest by playing.
+      </p>
+    </header>
+
+    <ol class="space-y-5 mb-12">
+      {
+        steps.map((s) => (
+          <li class="flex gap-4 p-5 rounded-lg border border-ink-800 bg-ink-900/40">
+            <div class="flex-shrink-0 w-9 h-9 rounded-full bg-brand-500 text-white font-bold flex items-center justify-center">
+              {s.n}
+            </div>
+            <div>
+              <h2 class="font-bold text-ink-50">{s.title}</h2>
+              <p class="text-sm text-ink-300 mt-1">{s.body}</p>
+            </div>
+          </li>
+        ))
+      }
+    </ol>
+
+    <h2 class="text-2xl font-bold text-ink-50 mb-4">Tips for new players</h2>
+    <ul class="space-y-2 text-ink-200 list-disc pl-5 marker:text-brand-400">
+      {tips.map((t) => <li>{t}</li>)}
+    </ul>
+  </section>
+</BaseLayout>

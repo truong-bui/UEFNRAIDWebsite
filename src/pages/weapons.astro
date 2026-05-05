@@ -1,0 +1,112 @@
+---
+export const prerender = true;
+import { Image } from "astro:assets";
+import BaseLayout from "@layouts/BaseLayout.astro";
+
+// Eager-load weapon thumbnails grouped by category folder.
+const all = import.meta.glob<{ default: ImageMetadata }>(
+  "@assets/images/weapons/**/*.png",
+  { eager: true }
+);
+
+type Category =
+  | "AssaultRifle"
+  | "SMG"
+  | "Shotgun"
+  | "Sniper"
+  | "Pistol"
+  | "Explosive"
+  | "Grenade"
+  | "Utility"
+  | "Consume";
+
+const labels: Record<Category, string> = {
+  AssaultRifle: "Assault Rifles",
+  SMG: "SMGs",
+  Shotgun: "Shotguns",
+  Sniper: "Snipers",
+  Pistol: "Pistols",
+  Explosive: "Explosives",
+  Grenade: "Grenades",
+  Utility: "Utility",
+  Consume: "Consumables",
+};
+
+const order: Category[] = [
+  "AssaultRifle",
+  "SMG",
+  "Shotgun",
+  "Sniper",
+  "Pistol",
+  "Explosive",
+  "Grenade",
+  "Utility",
+  "Consume",
+];
+
+interface Weapon {
+  name: string;
+  image: ImageMetadata;
+}
+
+const groups = new Map<Category, Weapon[]>();
+for (const cat of order) groups.set(cat, []);
+
+for (const [path, mod] of Object.entries(all)) {
+  const match = path.match(/weapons\/([^/]+)\/T_(?:[A-Z]+)?(.+)\.png$/);
+  if (!match) continue;
+  const cat = match[1] as Category;
+  if (!groups.has(cat)) continue;
+  const raw = match[2];
+  const name = raw.replace(/([A-Z])/g, " $1").trim();
+  groups.get(cat)!.push({ name, image: mod.default });
+}
+
+for (const list of groups.values()) {
+  list.sort((a, b) => a.name.localeCompare(b.name));
+}
+---
+
+<BaseLayout
+  title="Weapons"
+  description="Full weapon roster for UEFN RAID — assault rifles, SMGs, snipers, shotguns, pistols, and utility."
+>
+  <section class="mx-auto max-w-6xl px-4 py-16">
+    <header class="mb-10">
+      <h1 class="text-4xl font-extrabold text-ink-50">Weapons</h1>
+      <p class="mt-2 text-ink-300 max-w-2xl">
+        The full RAID arsenal. Each tier is balanced for round economy — early-buy weapons reward
+        accuracy, full-buy options reward decision-making.
+      </p>
+    </header>
+
+    {
+      order.map((cat) => {
+        const list = groups.get(cat) ?? [];
+        if (list.length === 0) return null;
+        return (
+          <div class="mb-12">
+            <h2 class="text-xl font-bold text-ink-50 mb-4 border-b border-ink-800 pb-2">
+              {labels[cat]}
+            </h2>
+            <ul class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
+              {list.map((w) => (
+                <li class="rounded-lg border border-ink-800 bg-ink-900/40 p-3 text-center hover:border-brand-500/60 transition-colors">
+                  <div class="aspect-square flex items-center justify-center mb-2 bg-ink-950/40 rounded">
+                    <Image
+                      src={w.image}
+                      alt={w.name}
+                      class="max-h-24 w-auto object-contain"
+                      widths={[120, 240]}
+                    />
+                  </div>
+                  <p class="text-xs text-ink-200 font-medium leading-tight">{w.name}</p>
+                </li>
+              ))}
+            </ul>
+          </div>
+        );
+      })
+    }
+  </section>
+</BaseLayout>

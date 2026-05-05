@@ -1,0 +1,31 @@
+---
+export const prerender = true;
+// Standalone maintenance page — decoupled from BaseLayout so it still renders
+// even if the rest of the site has a content-config error. Site-wide maintenance
+// is handled by the build-time flag in astro.config.mjs.
+import "@styles/global.css";
+import { SITE, MAINTENANCE_ETA } from "@lib/site";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex" />
+    <title>{SITE.name} — Maintenance</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  </head>
+  <body class="bg-ink-950 text-ink-100">
+    <div class="min-h-screen flex items-center justify-center px-6">
+      <div class="text-center max-w-lg">
+        <img src="/assets/logo.svg" alt="" width="80" height="80" class="mx-auto mb-6" />
+        <h1 class="text-3xl font-bold mb-3">{SITE.name} is reloading.</h1>
+        <p class="text-ink-300">
+          We're patching weapon balance and rolling out new map updates. Be right back.
+        </p>
+        {MAINTENANCE_ETA && <p class="mt-3 text-sm text-ink-400">ETA: {MAINTENANCE_ETA}</p>}
+      </div>
+    </div>
+  </body>
+</html>

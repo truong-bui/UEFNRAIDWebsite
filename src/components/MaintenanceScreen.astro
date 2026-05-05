@@ -1,0 +1,25 @@
+---
+import { SITE, MAINTENANCE_ETA } from "@lib/site";
+---
+
+<div class="min-h-screen flex items-center justify-center px-6 bg-ink-950 text-ink-100">
+  <div class="text-center max-w-lg">
+    <img src="/assets/logo.svg" alt="" width="80" height="80" class="mx-auto mb-6 opacity-90" />
+    <h1 class="text-3xl font-bold mb-3 text-ink-50">{SITE.name} is reloading.</h1>
+    <p class="text-ink-300 mb-2">
+      We're patching weapon balance and rolling out new map updates. The site is briefly down while we
+      deploy.
+    </p>
+    {
+      MAINTENANCE_ETA && (
+        <p class="text-sm text-ink-400">Estimated back: {MAINTENANCE_ETA}</p>
+      )
+    }
+    <p class="mt-8 text-sm text-ink-500">
+      Follow updates on
+      <a href="https://x.com/uefnraid" class="text-brand-400 hover:underline" target="_blank" rel="noopener noreferrer">X</a>
+      or
+      <a href="https://discord.gg/F7YtVbXTHp" class="text-brand-400 hover:underline" target="_blank" rel="noopener noreferrer">Discord</a>.
+    </p>
+  </div>
+</div>

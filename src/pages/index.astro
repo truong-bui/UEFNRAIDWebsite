@@ -1,0 +1,84 @@
+---
+export const prerender = true;
+import { getCollection } from "astro:content";
+import BaseLayout from "@layouts/BaseLayout.astro";
+import Hero from "@components/Hero.astro";
+import PostCard from "@components/PostCard.astro";
+import GalleryGrid from "@components/GalleryGrid.astro";
+import NewsletterCTA from "@components/NewsletterCTA.astro";
+
+const posts = (await getCollection("posts", ({ data }) => !data.draft))
+  .sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime())
+  .slice(0, 3);
+
+const gallery = (await getCollection("gallery"))
+  .filter((g) => g.data.featured)
+  .slice(0, 6);
+---
+
+<BaseLayout>
+  <Hero />
+
+  <section class="mx-auto max-w-6xl px-4 py-16">
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="rounded-lg border border-ink-800 bg-ink-900/40 p-6">
+        <h2 class="text-lg font-bold text-ink-50 mb-2">Tactical, not casual</h2>
+        <p class="text-sm text-ink-300">
+          5v5 round-based combat with an economy, weapon-buy phase, and bomb-plant objective.
+        </p>
+      </div>
+      <div class="rounded-lg border border-ink-800 bg-ink-900/40 p-6">
+        <h2 class="text-lg font-bold text-ink-50 mb-2">Custom weapons & maps</h2>
+        <p class="text-sm text-ink-300">
+          Hand-tuned weapons across rifles, SMGs, snipers, shotguns. Maps designed for read-and-rotate play.
+        </p>
+      </div>
+      <div class="rounded-lg border border-ink-800 bg-ink-900/40 p-6">
+        <h2 class="text-lg font-bold text-ink-50 mb-2">Built in UEFN</h2>
+        <p class="text-sm text-ink-300">
+          Free to play in Fortnite. Drops in via island code — no separate install.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  {
+    posts.length > 0 && (
+      <section class="mx-auto max-w-6xl px-4 py-12">
+        <div class="flex items-end justify-between mb-6">
+          <h2 class="text-2xl font-bold text-ink-50">Latest Dev Posts</h2>
+          <a href="/posts" class="text-sm text-brand-400 hover:underline">All posts →</a>
+        </div>
+        <div class="grid md:grid-cols-3 gap-5">
+          {posts.map((p) => (
+            <PostCard
+              href={`/posts/${p.id}`}
+              title={p.data.title}
+              description={p.data.description}
+              pubDate={p.data.pubDate}
+              cover={p.data.cover}
+              coverAlt={p.data.coverAlt}
+              tags={p.data.tags}
+            />
+          ))}
+        </div>
+      </section>
+    )
+  }
+
+  {
+    gallery.length > 0 && (
+      <section class="mx-auto max-w-6xl px-4 py-12">
+        <div class="flex items-end justify-between mb-6">
+          <h2 class="text-2xl font-bold text-ink-50">Featured Gallery</h2>
+          <a href="/gallery" class="text-sm text-brand-400 hover:underline">View all →</a>
+        </div>
+        <GalleryGrid items={gallery} />
+      </section>
+    )
+  }
+
+  <div class="mx-auto max-w-4xl px-4">
+    <NewsletterCTA />
+  </div>
+</BaseLayout>

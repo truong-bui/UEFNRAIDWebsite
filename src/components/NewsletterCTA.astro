@@ -1,0 +1,43 @@
+---
+import { FORMSPARK } from "@lib/site";
+---
+
+<section class="border border-ink-800 rounded-xl bg-ink-900/60 p-8 my-16">
+  <div class="max-w-xl mx-auto text-center">
+    <h2 class="text-2xl font-bold text-ink-50">Get patch notes by email</h2>
+    <p class="mt-2 text-ink-300 text-sm">
+      Map drops, balance changes, tournament announcements. No spam.
+    </p>
+
+    <form
+      action={FORMSPARK.newsletter}
+      method="post"
+      class="mt-6 flex flex-col sm:flex-row gap-2"
+    >
+      <input type="hidden" name="_redirect" value="/subscribed" />
+      <input
+        type="text"
+        name="_gotcha"
+        tabindex="-1"
+        autocomplete="off"
+        class="hidden"
+        aria-hidden="true"
+      />
+      <label for="newsletter-email" class="sr-only">Email address</label>
+      <input
+        id="newsletter-email"
+        type="email"
+        name="email"
+        required
+        placeholder="you@example.com"
+        class="flex-1 px-4 py-2.5 rounded-md bg-ink-950 border border-ink-700 text-ink-100 placeholder:text-ink-500 focus:outline-none focus:border-brand-400"
+      />
+      <button
+        type="submit"
+        class="px-5 py-2.5 rounded-md bg-brand-500 hover:bg-brand-400 text-white font-semibold transition-colors"
+      >
+        Subscribe
+      </button>
+    </form>
+  </div>
+</section>

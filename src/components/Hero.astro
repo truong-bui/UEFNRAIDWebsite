@@ -1,0 +1,44 @@
+---
+import { SITE } from "@lib/site";
+---
+
+<section class="relative overflow-hidden border-b border-ink-800">
+  <div class="absolute inset-0 -z-10">
+    <img
+      src="/RaidMarketThumbnail.png"
+      alt=""
+      class="w-full h-full object-cover opacity-30"
+      aria-hidden="true"
+    />
+    <div class="absolute inset-0 bg-gradient-to-b from-ink-950/60 via-ink-950/85 to-ink-950"></div>
+  </div>
+
+  <div class="mx-auto max-w-6xl px-4 py-24 md:py-32 text-center">
+    <p class="uppercase tracking-[0.25em] text-xs text-brand-400 mb-4">
+      Built in Fortnite UEFN
+    </p>
+    <h1 class="text-4xl md:text-6xl font-extrabold text-ink-50 tracking-tight max-w-3xl mx-auto">
+      {SITE.name}
+    </h1>
+    <p class="mt-5 text-lg md:text-xl text-ink-300 max-w-2xl mx-auto">
+      {SITE.tagline}
+    </p>
+    <div class="mt-8 flex flex-wrap items-center justify-center gap-3">
+      <a
+        href="/learn"
+        class="px-6 py-3 rounded-md bg-brand-500 hover:bg-brand-400 text-white font-semibold transition-colors"
+      >
+        How to Play
+      </a>
+      <a
+        href="/gallery"
+        class="px-6 py-3 rounded-md border border-ink-700 hover:border-brand-400 text-ink-100 hover:text-brand-400 font-semibold transition-colors"
+      >
+        See the Gallery
+      </a>
+    </div>
+    <p class="mt-6 text-xs text-ink-500">
+      Island code: <code class="font-mono text-ink-300">{SITE.islandCode}</code>
+    </p>
+  </div>
+</section>
