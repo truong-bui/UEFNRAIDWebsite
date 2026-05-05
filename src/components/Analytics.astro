@@ -1,19 +1,25 @@
 ---
-// Hardcoded GA4 install snippet — verbatim from Google's docs.
-// Per the portfolio convention, no env var indirection and no Consent Mode v2.
+// GA4 install snippet — measurement ID sourced from PUBLIC_GA_ID env var.
+// Renders nothing when PUBLIC_GA_ID is unset (e.g. local dev, preview).
 import { GA_MEASUREMENT_ID } from "@lib/site";
 ---
 
-<script
-  is:inline
-  async
-  src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
-></script>
-<script is:inline define:vars={{ GA_MEASUREMENT_ID }}>
-  window.dataLayer = window.dataLayer || [];
-  function gtag() {
-    dataLayer.push(arguments);
-  }
-  gtag("js", new Date());
-  gtag("config", GA_MEASUREMENT_ID);
-</script>
+{
+  GA_MEASUREMENT_ID && (
+    <>
+      <script
+        is:inline
+        async
+        src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
+      />
+      <script is:inline define:vars={{ GA_MEASUREMENT_ID }}>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+          dataLayer.push(arguments);
+        }
+        gtag("js", new Date());
+        gtag("config", GA_MEASUREMENT_ID);
+      </script>
+    </>
+  )
+}

@@ -40,8 +40,7 @@ npm run deploy       # astro build && wrangler deploy
 | `PUBLIC_CONTACT_ENDPOINT` | Formspark contact-form URL |
 | `PUBLIC_NEWSLETTER_ENDPOINT` | Formspark newsletter-form URL |
 | `PUBLIC_MAINTENANCE_ETA` | Optional ETA copy on `/maintenance` |
-
-Hardcoded (no env var): GA4 measurement ID — edit `src/lib/site.ts`.
+| `PUBLIC_GA_ID` | GA4 measurement ID (e.g. `G-XXXXXXXXXX`). Leave unset to disable analytics. |
 
 ## Maintenance mode
 

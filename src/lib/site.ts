@@ -1,6 +1,5 @@
-// Hardcoded GA4 measurement ID — uses Google's literal install snippet (no env-var indirection).
-// Replace with the real ID when ready.
-export const GA_MEASUREMENT_ID = "G-XXXXXXXXXX";
+// GA4 measurement ID, sourced from PUBLIC_GA_ID. Empty string = analytics disabled.
+export const GA_MEASUREMENT_ID = import.meta.env.PUBLIC_GA_ID || "";
 
 export const SITE = {
   url: import.meta.env.PUBLIC_SITE_URL || "https://uefnraid.com",

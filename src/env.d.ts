@@ -8,6 +8,7 @@ interface ImportMetaEnv {
   readonly PUBLIC_CONTACT_ENDPOINT: string;
   readonly PUBLIC_NEWSLETTER_ENDPOINT: string;
   readonly PUBLIC_MAINTENANCE_ETA?: string;
+  readonly PUBLIC_GA_ID?: string;
 }
 
 interface ImportMeta {
