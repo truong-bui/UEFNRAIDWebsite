@@ -1,8 +1,14 @@
 import { defineConfig } from "astro/config";
+import { EventEmitter } from "node:events";
 import cloudflare from "@astrojs/cloudflare";
 import sitemap from "@astrojs/sitemap";
 import mdx from "@astrojs/mdx";
 import tailwindcss from "@tailwindcss/vite";
+
+// Several integrations (cloudflare adapter, mdx, sitemap, tailwind) each register
+// FSWatcher listeners — Node's default cap of 10 trips a MaxListenersExceededWarning.
+// Bump the global default; it's purely cosmetic but stops the noise.
+EventEmitter.defaultMaxListeners = 30;
 
 // Build-time maintenance flag.
 // Flip to `true`, redeploy (~30 seconds), and the entire site renders the maintenance screen.

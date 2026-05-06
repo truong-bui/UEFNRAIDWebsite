@@ -102,7 +102,7 @@ function fullSrc(s: ImageMetadata | string): string {
               </button>
             )}
           </div>
-          {item.caption && (
+          {item.caption && item.caption.trim() !== "" && (
             <figcaption class="px-3 py-2 text-xs text-ink-300 bg-ink-900 border-t border-ink-800">
               {item.caption}
             </figcaption>
