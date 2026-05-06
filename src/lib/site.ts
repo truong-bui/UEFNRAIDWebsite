@@ -26,7 +26,6 @@ export const SOCIALS = [
 export const NAV = [
   { label: "Home", href: "/" },
   { label: "Posts", href: "/posts" },
-  { label: "Gallery", href: "/gallery" },
   { label: "Maps", href: "/maps" },
   { label: "Weapons", href: "/weapons" },
   { label: "How to Play", href: "/learn" },

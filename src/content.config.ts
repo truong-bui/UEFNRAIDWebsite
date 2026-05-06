@@ -18,20 +18,23 @@ const posts = defineCollection({
     }),
 });
 
-const gallery = defineCollection({
-  loader: glob({ pattern: "**/*.{md,mdx}", base: "./src/content/gallery" }),
+const maps = defineCollection({
+  loader: glob({ pattern: "**/*.{md,mdx}", base: "./src/content/maps" }),
   schema: ({ image }) =>
     z.object({
-      title: z.string(),
-      caption: z.string().optional(),
-      capturedDate: z.date().optional(),
-      kind: z.enum(["screenshot", "render", "concept", "video"]).default("screenshot"),
-      cover: image(),
-      coverAlt: z.string(),
-      videoSrc: z.string().optional(),
-      tags: z.array(z.string()).default([]),
-      featured: z.boolean().default(false),
+      name: z.string(),
+      description: z.string(),
+      releaseDate: z.date().optional(),
+      location: z.string().optional(),
+      sites: z.number().int().min(1).default(2),
+      modes: z.array(z.string()).default(["Bomb Plant"]),
+      thumbnail: image(),
+      thumbnailAlt: z.string(),
+      minimap: image().optional(),
+      minimapAlt: z.string().optional(),
+      order: z.number().int().default(100),
+      draft: z.boolean().default(false),
     }),
 });
 
-export const collections = { posts, gallery };
+export const collections = { posts, maps };

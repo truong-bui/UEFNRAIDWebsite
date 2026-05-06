@@ -1,0 +1,89 @@
+---
+name: "Market"
+description: "Dense corridors of stalls and shopfronts. Two bomb sites at opposite ends, with a contested mid that controls rotation pace."
+releaseDate: 2025-12-01
+location: "Coastal town · daytime"
+sites: 2
+modes: ["Bomb Plant"]
+thumbnail: "../../assets/images/thumbnails/market/RaidMarketThumbnail.png"
+thumbnailAlt: "Aerial render of the Market map at golden hour"
+minimap: "../../assets/images/minimap/market/T_MarketTopdownLayout.png"
+minimapAlt: "Topdown layout of the Market map showing A-site, mid, and B-site"
+order: 1
+---
+
+import Gallery from "@components/Gallery.astro";
+import shot7 from "../../assets/images/screenshots/market/HighresScreenshot00007.png";
+import shot8 from "../../assets/images/screenshots/market/HighresScreenshot00008.png";
+import shot9 from "../../assets/images/screenshots/market/HighresScreenshot00009.png";
+import shot11 from "../../assets/images/screenshots/market/HighresScreenshot00011.png";
+import shot12 from "../../assets/images/screenshots/market/HighresScreenshot00012.png";
+import shot13 from "../../assets/images/screenshots/market/HighresScreenshot00013.png";
+import shot14 from "../../assets/images/screenshots/market/HighresScreenshot00014.png";
+import shot15 from "../../assets/images/screenshots/market/HighresScreenshot00015.png";
+import shot18 from "../../assets/images/screenshots/market/HighresScreenshot00018.png";
+import shot22 from "../../assets/images/screenshots/market/HighresScreenshot00022.png";
+import shot24 from "../../assets/images/screenshots/market/HighresScreenshot00024.png";
+import shot28 from "../../assets/images/screenshots/market/HighresScreenshot00028.png";
+
+## Overview
+
+Market is RAID's launch map. The layout is a tight, partially-covered marketplace built around two bomb sites — **A** at the food court on the south end, **B** at the loading dock on the north end. The two sides connect through a long, mostly-open mid corridor that rewards smokes, flashes, and patient rotations.
+
+Defenders spawn closer to A; attackers spawn near mid. Site rotations take roughly 12 seconds without contest, so committing utility to mid is often the difference between holding and losing a round.
+
+## Callouts
+
+- **A-site (Food Court)** — Stalls and counters provide head-glitch angles. Default plant is behind the central counter.
+- **B-site (Loading Dock)** — Wide-open with crates as cover. Strong for post-plant trades.
+- **Mid (Plaza)** — A long sightline split by an awning. Wallbangs are real; pre-aim chest height.
+- **Connector** — Short L-shaped hallway from mid to B. Defender's flashbang lane.
+- **Heaven** — Elevated walkway above A. Strong AWP/sniper position.
+
+## Tips
+
+- Smoke mid before any A → B rotate.
+- Defenders should stagger holds — one player heaven, one player site, one floater.
+- Attackers default plant favors B; A executes need utility commitment.
+
+## Gallery
+
+<Gallery
+  columns={3}
+  items={[
+    { src: shot7,  alt: "Aerial topdown of Market", caption: "Aerial — golden hour" },
+    { src: shot8,  alt: "A-site food court entrance", caption: "A-site — food court" },
+    { src: shot9,  alt: "Mid corridor sightline", caption: "Mid sightline" },
+    { src: shot11, alt: "B-site loading dock", caption: "B-site — loading dock" },
+    { src: shot12, alt: "Mid corridor firefight", caption: "Mid contest" },
+    { src: shot13, alt: "Connector hallway", caption: "Connector to B" },
+    { src: shot14, alt: "Heaven overlook of A", caption: "Heaven — A overlook" },
+    { src: shot15, alt: "Defenders holding stall cover", caption: "A-site hold" },
+    { src: shot18, alt: "Smoke deployment near B", caption: "Smoke into B" },
+    { src: shot22, alt: "Buy-phase weapon shop UI", caption: "Buy phase" },
+    { src: shot24, alt: "Round transition", caption: "Round 6 — side swap" },
+    { src: shot28, alt: "Round-end scoreboard", caption: "Scoreboard" },
+  ]}
+/>
+
+## Clips
+
+<Gallery
+  columns={2}
+  items={[
+    {
+      src: "/videos/bomb-planted.webm",
+      kind: "video",
+      poster: shot18,
+      alt: "Bomb plant clip on B-site",
+      caption: "B-site plant",
+    },
+    {
+      src: "/videos/weapon-shop-ui.webm",
+      kind: "video",
+      poster: shot22,
+      alt: "Weapon shop UI during buy phase",
+      caption: "Weapon shop UI",
+    },
+  ]}
+/>

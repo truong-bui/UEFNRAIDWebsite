@@ -1,6 +1,7 @@
 import { defineConfig } from "astro/config";
 import cloudflare from "@astrojs/cloudflare";
 import sitemap from "@astrojs/sitemap";
+import mdx from "@astrojs/mdx";
 import tailwindcss from "@tailwindcss/vite";
 
 // Build-time maintenance flag.
@@ -19,7 +20,7 @@ export default defineConfig({
     // Prerender with Node instead of workerd to avoid runner-worker bundling issues.
     prerenderEnvironment: "node",
   }),
-  integrations: [sitemap()],
+  integrations: [mdx(), sitemap()],
   vite: {
     plugins: [tailwindcss()],
     define: {
