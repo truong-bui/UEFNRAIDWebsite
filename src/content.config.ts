@@ -24,10 +24,9 @@ const maps = defineCollection({
     z.object({
       name: z.string(),
       description: z.string(),
+      islandCode: z.string(),
       releaseDate: z.date().optional(),
-      location: z.string().optional(),
-      sites: z.number().int().min(1).default(2),
-      modes: z.array(z.string()).default(["Bomb Plant"]),
+      updatedDate: z.date().optional(),      
       thumbnail: image(),
       thumbnailAlt: z.string(),
       minimap: image().optional(),

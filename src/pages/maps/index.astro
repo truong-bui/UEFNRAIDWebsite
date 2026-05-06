@@ -46,12 +46,8 @@ const maps = (await getCollection("maps", ({ data }) => !data.draft)).sort(
                   <div class="flex items-baseline justify-between gap-3">
                     <h2 class="text-xl font-bold text-ink-50 group-hover:text-brand-400 transition-colors">
                       {m.data.name}
-                    </h2>
-                    <span class="text-xs text-ink-400">{m.data.sites} sites</span>
-                  </div>
-                  {m.data.location && (
-                    <p class="text-xs text-ink-500 mt-0.5">{m.data.location}</p>
-                  )}
+                    </h2>                   
+                  </div>                  
                   <p class="mt-3 text-sm text-ink-300 line-clamp-2">{m.data.description}</p>
                   <p class="mt-4 text-xs text-brand-400">View map article →</p>
                 </div>
